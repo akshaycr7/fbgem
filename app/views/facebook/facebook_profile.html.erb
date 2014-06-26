@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="span4">
+    <div class="thumbnail">
+      <img src="<%= @picture %>" style="float: left;margin: 5px;">
+      <h4><%= @profile["name"] %></h4>
+      
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 16px;width: 1000px;">
+  <div class="span5">
+  <h1>Feeds</h1>
+    <table class="table table-striped">
+      <tr>
+        <th>Story</th>
+        <th>Story tags</th>
+      </tr>
+        <% @feed.each do |f| %>
+          <tr>
+            <td><%= f["story"] %></td>
+            
+          </tr>
+      <% end %>
+     </table>
+  </div>
+
+ 
+
+    <div class="span5">
+    <h1>Friends</h1>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+      </tr>
+        <% @friends.each do |f| %>
+          <tr>
+            <td><a href="http://facebook.com/<%= f["id"] %>"><%= f["name"] %></a></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div>
+ <h1>Status</h1>
+    <table class="table table-striped">
+      <tr>
+        <th>Status</th>
+      </tr>
+        <% @statuses.each do |s| %>
+          <tr>
+            <td><%= s["message"] %></td>
+          </tr>
+      <% end %>
+    </table>
+
+</div>
+
+<h1>Links</h1>
+<table class="table table-striped">
+      <tr>
+        <th>Links</th>
+      </tr>
+        <% @links.each do |l| %>
+          <tr>
+            <td><%= l["name"] %></td>
+          </tr>
+      <% end %>
+    </table>
+
+
+
+
+
+<div id="fb-root"></div>
+
+
+<div class="fb-like" data-href="https://www.facebook.com/djhardwell" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
+<div class="fb-comments" data-href="http://www.facebook.com/djhardwell/comments" data-numposts="10" data-colorscheme="light"></div>
